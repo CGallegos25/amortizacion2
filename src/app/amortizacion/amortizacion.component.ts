@@ -23,13 +23,15 @@ export class AmortizacionComponent implements OnInit {
 
   getFormAmortizacion(){
       this.arrayLista = [];
+      console.log(this.amortizacionModel.monto);
+      console.log(this.amortizacionModel.plazo);
       for(let i=0; i < this.amortizacionModel.plazo; i++){
 
       if(i == 0){
         let calcularInteres:number = ((this.amortizacionModel.monto*this.amortizacionModel.tasa)/(this.amortizacionModel.plazo))/100;
         let amortizacion:number = ((this.amortizacionModel.monto)/(this.amortizacionModel.plazo));
         let pago:any =(calcularInteres+amortizacion);
-        const deudaFinal:number = (((this.amortizacionModel.monto)+(calcularInteres))/10)-pago;
+        const deudaFinal:number = (((this.amortizacionModel.monto)+(calcularInteres))/100)-pago;
         this.arrayLista.push(new Calculos(i+1, this.amortizacionModel.monto, calcularInteres, amortizacion, pago, deudaFinal));
 
       } else{
