@@ -22,7 +22,7 @@ export class AmortizacionComponent implements OnInit {
   }
 
   getFormAmortizacion(){
-
+      this.arrayLista = [];
       for(let i=0; i < this.amortizacionModel.plazo; i++){
 
       if(i == 0){
