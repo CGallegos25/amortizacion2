@@ -36,7 +36,7 @@ export class AmortizacionComponent implements OnInit {
         this.arrayLista.push(new Calculos(i + 1, this.amortizacionModel.monto, calcularInteres, amortizacion, pago, deudaFinal));
 
       } else {
-        let calcularInteresN: number = ((this.arrayLista[i - 1].deudaFinal * this.amortizacionModel.tasa) / this.amortizacionModel.plazo) / 10;
+        let calcularInteresN: number = ((this.arrayLista[i - 1].deudaFinal * this.amortizacionModel.tasa) / this.amortizacionModel.plazo) / 100;
         let amortizacionN: number = (this.amortizacionModel.monto) / (this.amortizacionModel.plazo);
         let pagoN: number = (calcularInteresN + amortizacionN);
         let deudaFinalN: number = (Number(this.arrayLista[i - 1].deudaFinal) + calcularInteresN) - pagoN; //this.sumar(this.arrayLista[i-1].deudaFinal,calcularInteresN))-pagoN);
